@@ -1,0 +1,86 @@
+
+import math
+import random
+def number_to_name(number):
+    # fill in your code below
+    if number == 0:
+        return "rock"
+    elif number == 1:
+        return "Spock"
+    elif number == 2:
+        return "paper"
+    elif number == 3:
+        return "lizard"
+    elif number == 4:
+        return "scissors"
+    else:
+        return "Error: Not an instructor"
+    
+    
+        
+    
+    
+    
+def name_to_number(name):
+    
+    if name == "rock":
+       return 0
+    elif name == "Spock":
+       return 1
+    elif name == "paper":
+       return 2
+    elif name == "lizard":
+       return 3
+    elif name == "scissors":
+       return 4
+    else:
+        return "Error:"
+
+def rpsls(name): 
+    # fill in your code below
+    
+    Player_guess = name
+    
+    # print player_number
+   
+    print "Player chooses " + Player_guess 
+    
+    # convert name to player_number using name_to_number
+    
+    player_number=name_to_number(name)
+    
+    # compute difference of player_number and comp_number modulo five    
+    
+    com_number = random.randrange(0,5)
+    modulo = (player_number - com_number)%5
+    
+    # use if/elif/else to determine winner
+
+    if modulo== 1:
+        winner="Player"
+    elif modulo == 2:
+        winner = "Player"
+    elif modulo == 3:
+        winner = "Computer"
+    elif modulo == 4:
+        winner = "Computer"
+    else:
+        winner = "Player and computer tie!"
+    # convert comp_number to name using number_to_name
+    
+    final=number_to_name(com_number)
+    print "Compuer chooses " + final
+    # print results
+    
+    if winner == "Player and computer tie!":
+        print(winner + "\n")
+    else:
+        print(winner + " wins! \n")
+        
+# test your code
+rpsls("rock")
+rpsls("Spock")
+rpsls("paper")
+rpsls("lizard")
+rpsls("scissors")
+
